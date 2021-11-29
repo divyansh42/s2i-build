@@ -45,13 +45,20 @@ jobs:
           github_pat: ${{ github.token }}
           s2i: "latest"
 
+      # - name: Login to redhat registry
+      #   uses: redhat-actions/podman-login@v1
+      #   with:
+      #     registry: registry.redhat.io
+      #     username: 13028073|giithub-bot
+      #     password: ${{ secrets.REGISTRY_PASSWORD }}
+
       # Build container image
       - name: Build
         id: build_image
         uses: ./s2i-build/
         with:
           path_context: './${{ env.TEST_REPO }}'
-          builder_image: 'centos/go-toolset-7-centos7'
+          builder_image: 'http://registry.redhat.io/openshift-pipelines/pipelines-git-init-rhel8@sha256:afc5d3f9efe26c7042635d43b8ffd09d67936e3d0b6b901dc08a33e20313d361'
           image: ${{ env.IMAGE_NAME }}
           tags: ${{ env.TAGS }}
 
