@@ -45,12 +45,12 @@ jobs:
           github_pat: ${{ github.token }}
           s2i: "latest"
 
-      # - name: Login to redhat registry
-      #   uses: redhat-actions/podman-login@v1
-      #   with:
-      #     registry: registry.redhat.io
-      #     username: 13028073|giithub-bot
-      #     password: ${{ secrets.REGISTRY_PASSWORD }}
+      - name: Login to redhat registry
+        uses: redhat-actions/podman-login@v1
+        with:
+          registry: registry.redhat.io
+          username: 13028073|giithub-bot
+          password: ${{ secrets.REGISTRY_PASSWORD }}
 
       # Build container image
       - name: Build
