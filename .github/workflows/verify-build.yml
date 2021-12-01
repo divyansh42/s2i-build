@@ -60,6 +60,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}
 
       - run: echo $DOCKER_CONFIG
+      - run: ls ~/.docker
       # Build container image
       - name: Build
         id: build_image
