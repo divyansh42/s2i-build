@@ -59,6 +59,7 @@ jobs:
           username: 13028073|giithub-bot
           password: ${{ secrets.REGISTRY_PASSWORD }}
 
+      - run: echo $DOCKER_CONFIG
       # Build container image
       - name: Build
         id: build_image
