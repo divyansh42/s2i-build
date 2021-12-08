@@ -52,12 +52,12 @@ jobs:
           username: 13028073|giithub-bot
           password: ${{ secrets.REGISTRY_PASSWORD }}
 
-      - name: Login to redhat registry
-        uses: divyansh42/podman-login@fix-docker-issue
-        with:
-          registry: registry.redhat.io
-          username: 13028073|giithub-bot
-          password: ${{ secrets.REGISTRY_PASSWORD }}
+      # - name: Login to redhat registry
+      #   uses: divyansh42/podman-login@fix-docker-issue
+      #   with:
+      #     registry: registry.redhat.io
+      #     username: 13028073|giithub-bot
+      #     password: ${{ secrets.REGISTRY_PASSWORD }}
 
       - run: echo $DOCKER_CONFIG
       - run: |
