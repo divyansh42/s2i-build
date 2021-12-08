@@ -50,15 +50,14 @@ jobs:
         with:
           registry: registry.redhat.io
           username: 13028073|giithub-bot
-          password: ${{ secrets.REGISTRY_PASSWORD }}
+          password: eyJhbGciOiJSUzUxMiJ9.eyJzdWIiOiI1OTY4OGRkZWY3Zjk0NGZiYmJkNjg5Mjc3MGZhYTlkNCJ9.Sm2JgYxQfcujtFFiHcoTg4EcQdLmk2qLoc8-FsqA_Hs2NsgmDgXfrjTbRnrA98lLzwLFh63mS4Z1wKCKR5z9n31DU_HD7WSOU0c1L0pR4YGJpjYbCg_5FhUQOQyLbH1vVKqmdkRFBlp0nhUjSMQmJdoevfbmV0Z7Vb_XeeaLEiEVPUYfFLVAooIRQrV-uH5v8ekCh4n1GWIEQXMmH6AqO2E3QioPnwVgouoHZkRwiv6rxuOS1XYSEhqc3rTB2PrNxN_B7T6YD0uKkfAXzOIvRuIFk8sI21lcML1yS_ejgKJBBxn69G1HHvs3EKVgyB5yGWLeM5LX2BIgwiK_4fycZ7_8aHNKvf94QHyQotNImFM1OTLHBmAeX_EZ8rVIJYCCqYkAd8qevQO5ibWSzczRHxgloDYJQufuJYHYyqy8S-SpwWCzy5ekBSwpMEfZaOU8dEgNqyJhupPrYKS2PXGtep7UqASwaPdCweXz6nHXHUKkA_e7QgNZmdcLcng5S02ZbJ9RHYDnQRVHlMt7wpZCztoC2fCWE5ohED3PNDjYDJFow_YXoyqMDCg5NBCTD5kHU0CNjeg32XkRy5_PCHgYg7hbH-roxP6UI7JsH15_Zo685CMXZapo-TTBkN7HKInUAYmL1ACowz3xdcnZcIbYm5db3O01GanWbyuRoT1F5xM
 
-      # - name: Login to redhat registry
-      #   uses: divyansh42/podman-login@fix-docker-issue
-      #   with:
-      #     registry: registry.redhat.io
-      #     username: 13028073|giithub-bot
-      #     password: ${{ secrets.REGISTRY_PASSWORD }}
-
+      - name: Login to redhat registry
+        uses: divyansh42/podman-login@fix-docker-issue
+        with:
+          registry: registry.redhat.io
+          username: 13028073|giithub-bot
+          password: eyJhbGciOiJSUzUxMiJ9.eyJzdWIiOiI1OTY4OGRkZWY3Zjk0NGZiYmJkNjg5Mjc3MGZhYTlkNCJ9.Sm2JgYxQfcujtFFiHcoTg4EcQdLmk2qLoc8-FsqA_Hs2NsgmDgXfrjTbRnrA98lLzwLFh63mS4Z1wKCKR5z9n31DU_HD7WSOU0c1L0pR4YGJpjYbCg_5FhUQOQyLbH1vVKqmdkRFBlp0nhUjSMQmJdoevfbmV0Z7Vb_XeeaLEiEVPUYfFLVAooIRQrV-uH5v8ekCh4n1GWIEQXMmH6AqO2E3QioPnwVgouoHZkRwiv6rxuOS1XYSEhqc3rTB2PrNxN_B7T6YD0uKkfAXzOIvRuIFk8sI21lcML1yS_ejgKJBBxn69G1HHvs3EKVgyB5yGWLeM5LX2BIgwiK_4fycZ7_8aHNKvf94QHyQotNImFM1OTLHBmAeX_EZ8rVIJYCCqYkAd8qevQO5ibWSzczRHxgloDYJQufuJYHYyqy8S-SpwWCzy5ekBSwpMEfZaOU8dEgNqyJhupPrYKS2PXGtep7UqASwaPdCweXz6nHXHUKkA_e7QgNZmdcLcng5S02ZbJ9RHYDnQRVHlMt7wpZCztoC2fCWE5ohED3PNDjYDJFow_YXoyqMDCg5NBCTD5kHU0CNjeg32XkRy5_PCHgYg7hbH-roxP6UI7JsH15_Zo685CMXZapo-TTBkN7HKInUAYmL1ACowz3xdcnZcIbYm5db3O01GanWbyuRoT1F5xM
       - run: echo $DOCKER_CONFIG
       - run: |
           ls ~/.docker
